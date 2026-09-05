@@ -16,10 +16,10 @@
 
     /* ==================== IMAGENS ==================== */
 
-    --imagem-hero: url("imagens/imagem_logo.png");
-    --imagem-olho: url("imagens/imagem_grande_da_pagina_inicial.jpg");
-    --imagem-cores: url("imagens/imagen_percepção_das_cores.png");
-    --imagem-cerebro: url("imagens/imagen_cerebro_e_a_visão.png");
+    --imagem-hero: url("imagens/imagem_grande_da_pagina_inicial.jpg");
+    --imagem-olho: url("imagens/images(1).jpeg");
+    --imagem-cores: url("imagens/images(2).jpeg");
+    --imagem-cerebro: url("imagens/images(3).jpeg");
 }
 
 
