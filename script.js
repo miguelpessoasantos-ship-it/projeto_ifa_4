@@ -61,7 +61,7 @@ const bancoPesquisa = [
 
     {
         titulo: "Percepção das cores",
-        descricao: "Entenda como nossos olhos e cérebro percebem as cores.",
+        descricao: "Entenda como nossos olhos e cérebro percebem as .",
         palavras: [
             "cores",
             "cor",
