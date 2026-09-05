@@ -457,6 +457,7 @@ function mostrarCuriosidades() {
        
         card.appendChild(conteudo);
         card.appendChild(imagem);
+       
         card.appendChild(link);
 
 
