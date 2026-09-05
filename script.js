@@ -1,27 +1,27 @@
-```javascript
 /* =====================================================
-VISSION
-SCRIPT DA PÁGINA INICIAL
+   VISSION
+   SCRIPT DA PÁGINA INICIAL
 ===================================================== */
 
 
 /* =====================================================
-BANCO DE PESQUISA
+   BANCO DE PESQUISA
 ===================================================== */
 
 const bancoPesquisa = [
 
     {
         titulo: "Como enxergamos?",
-        descricao:
-            "Descubra como a luz entra nos olhos e como o cérebro interpreta as imagens.",
+        descricao: "Descubra como a luz entra nos olhos e como o cérebro interpreta as imagens.",
         palavras: [
             "visão",
+            "visao",
             "ver",
             "enxergar",
             "olho",
             "luz",
             "córnea",
+            "cornea",
             "retina"
         ],
         pagina: "visao.html"
@@ -29,13 +29,14 @@ const bancoPesquisa = [
 
     {
         titulo: "Anatomia do olho",
-        descricao:
-            "Conheça as principais partes do olho e suas funções.",
+        descricao: "Conheça as principais partes do olho e suas funções.",
         palavras: [
             "anatomia",
             "olho",
             "córnea",
+            "cornea",
             "íris",
+            "iris",
             "pupila",
             "retina",
             "cristalino"
@@ -45,11 +46,11 @@ const bancoPesquisa = [
 
     {
         titulo: "Doenças e problemas de visão",
-        descricao:
-            "Conheça alguns problemas que podem afetar a visão.",
+        descricao: "Conheça alguns problemas que podem afetar a visão.",
         palavras: [
             "doenças",
-            "doença",
+            "doenca",
+            "doenças de visão",
             "miopia",
             "astigmatismo",
             "glaucoma",
@@ -60,13 +61,13 @@ const bancoPesquisa = [
 
     {
         titulo: "Percepção das cores",
-        descricao:
-            "Entenda como nossos olhos e cérebro percebem as cores.",
+        descricao: "Entenda como nossos olhos e cérebro percebem as cores.",
         palavras: [
             "cores",
             "cor",
             "cones",
             "arco-íris",
+            "arco iris",
             "colorido"
         ],
         pagina: "cores.html"
@@ -76,102 +77,78 @@ const bancoPesquisa = [
 
 
 /* =====================================================
-BANCO DE CURIOSIDADES
+   BANCO DE CURIOSIDADES
 ===================================================== */
 
 const curiosidades = [
 
     {
         titulo: "Como enxergamos?",
-        texto:
-            "Descubra como a luz percorre o olho até chegar ao cérebro.",
-        imagem:
-            "imagens/images(1).jpeg",
-        pagina:
-            "visao.html"
+        texto: "Descubra como a luz percorre o olho até chegar ao cérebro.",
+        imagem: "imagens/images(1).jpeg",
+        pagina: "visao.html"
     },
 
     {
         titulo: "Percepção das cores",
-        texto:
-            "Entenda como os cones presentes na retina participam da percepção das cores.",
-        imagem:
-            "imagens/images(2).jpeg",
-        pagina:
-            "cores.html"
+        texto: "Entenda como os cones presentes na retina participam da percepção das cores.",
+        imagem: "imagens/images(2).jpeg",
+        pagina: "cores.html"
     },
 
     {
         titulo: "O cérebro e a visão",
-        texto:
-            "Saiba como o cérebro interpreta as informações recebidas pelos olhos.",
-        imagem:
-            "imagens/images(3).jpeg",
-        pagina:
-            "visao.html"
+        texto: "Saiba como o cérebro interpreta as informações recebidas pelos olhos.",
+        imagem: "imagens/images(3).jpeg",
+        pagina: "visao.html"
     },
 
     {
         titulo: "Anatomia do olho",
-        texto:
-            "Conheça as principais estruturas que fazem parte do olho humano.",
-        imagem:
-            "imagens/images(4).jpeg",
-        pagina:
-            "anatomia.html"
+        texto: "Conheça as principais estruturas que fazem parte do olho humano.",
+        imagem: "imagens/images(4).jpeg",
+        pagina: "anatomia.html"
     },
 
     {
         titulo: "A retina",
-        texto:
-            "A retina possui células especiais responsáveis por detectar a luz.",
-        imagem:
-            "imagens/images(5).jpeg",
-        pagina:
-            "anatomia.html"
+        texto: "A retina possui células especiais responsáveis por detectar a luz.",
+        imagem: "imagens/images(5).jpeg",
+        pagina: "anatomia.html"
     },
 
     {
         titulo: "Problemas de visão",
-        texto:
-            "Conheça alguns problemas que podem afetar a qualidade da visão.",
-        imagem:
-            "imagens/images(6).jpeg",
-        pagina:
-            "doencas.html"
+        texto: "Conheça alguns problemas que podem afetar a qualidade da visão.",
+        imagem: "imagens/images(6).jpeg",
+        pagina: "doencas.html"
     }
 
 ];
 
 
 /* =====================================================
-ELEMENTOS HTML
+   ELEMENTOS DO HTML
 ===================================================== */
 
-const pesquisa =
-    document.querySelector("#pesquisa");
+const pesquisa = document.querySelector("#pesquisa");
+const btnPesquisa = document.querySelector("#btnPesquisa");
+const resultadosPesquisa = document.querySelector("#resultadosPesquisa");
 
-const btnPesquisa =
-    document.querySelector("#btnPesquisa");
+const cardsCuriosidades = document.querySelector("#cardsCuriosidades");
+const btnTrocarCuriosidades = document.querySelector("#btnTrocarCuriosidades");
 
-const resultadosPesquisa =
-    document.querySelector("#resultadosPesquisa");
-
-const cardsCuriosidades =
-    document.querySelector("#cardsCuriosidades");
-
-const btnTrocarCuriosidades =
-    document.querySelector("#btnTrocarCuriosidades");
-
-const modoEscuro =
-    document.querySelector("#modoEscuro");
-
-const topo =
-    document.querySelector("#topo");
+const modoEscuro = document.querySelector("#modoEscuro");
+const topo = document.querySelector("#topo");
 
 
 /* =====================================================
-FUNÇÃO PARA REMOVER ACENTOS
+   NORMALIZAR TEXTO
+   Remove acentos e transforma em minúsculas.
+   
+   Exemplo:
+   "VISÃO" → "visao"
+   "Córnea" → "cornea"
 ===================================================== */
 
 function normalizarTexto(texto) {
@@ -186,38 +163,40 @@ function normalizarTexto(texto) {
 
 
 /* =====================================================
-PESQUISA
+   PESQUISA
 ===================================================== */
 
 function pesquisar() {
+
+    if (!pesquisa || !resultadosPesquisa) {
+        return;
+    }
 
     const termo = normalizarTexto(pesquisa.value);
 
     resultadosPesquisa.innerHTML = "";
 
-    /* Se não digitou nada */
+
+    /* Se a pesquisa estiver vazia */
 
     if (termo === "") {
 
         resultadosPesquisa.classList.remove("ativo");
 
         return;
-
     }
 
 
-    /* Procura no banco de pesquisa */
+    /* Procurar no banco */
 
-    const resultados = bancoPesquisa.filter(item => {
+    const resultados = bancoPesquisa.filter(function(item) {
 
         const textoCompleto = normalizarTexto(
-
-            item.titulo
-            + " "
-            + item.descricao
-            + " "
-            + item.palavras.join(" ")
-
+            item.titulo +
+            " " +
+            item.descricao +
+            " " +
+            item.palavras.join(" ")
         );
 
         return textoCompleto.includes(termo);
@@ -225,67 +204,85 @@ function pesquisar() {
     });
 
 
-    /* Se não encontrou */
+    /* =================================================
+       NENHUM RESULTADO
+    ================================================= */
 
     if (resultados.length === 0) {
 
-        resultadosPesquisa.innerHTML = `
+        const mensagem = document.createElement("div");
 
-            <div class="semResultado">
+        mensagem.className = "semResultado";
 
-                <i class="fa-solid fa-circle-info"></i>
 
-                <p>
-                    Nenhum resultado encontrado.
-                </p>
+        const icone = document.createElement("i");
 
-                <small>
-                    Tente pesquisar por:
-                    visão, anatomia, doenças ou cores.
-                </small>
+        icone.className = "fa-solid fa-circle-info";
 
-            </div>
 
-        `;
+        const texto = document.createElement("p");
+
+        texto.textContent = "Nenhum resultado encontrado.";
+
+
+        const dica = document.createElement("small");
+
+        dica.textContent =
+            "Tente pesquisar por: visão, anatomia, doenças ou cores.";
+
+
+        mensagem.appendChild(icone);
+        mensagem.appendChild(texto);
+        mensagem.appendChild(dica);
+
+        resultadosPesquisa.appendChild(mensagem);
 
         resultadosPesquisa.classList.add("ativo");
 
         return;
-
     }
 
 
-    /* Criar cada resultado */
+    /* =================================================
+       MOSTRAR RESULTADOS
+    ================================================= */
 
-    resultados.forEach(resultado => {
+    resultados.forEach(function(resultado) {
 
-        const elemento =
-            document.createElement("a");
+        const elemento = document.createElement("a");
 
-        elemento.classList.add("resultadoPesquisa");
+        elemento.className = "resultadoPesquisa";
 
-        elemento.href =
-            resultado.pagina;
+        elemento.href = resultado.pagina;
 
-        elemento.innerHTML = `
 
-            <div class="resultadoTexto">
+        const texto = document.createElement("div");
 
-                <h3>
-                    ${resultado.titulo}
-                </h3>
+        texto.className = "resultadoTexto";
 
-                <p>
-                    ${resultado.descricao}
-                </p>
 
-            </div>
+        const titulo = document.createElement("h3");
 
-            <span class="resultadoSeta">
-                →
-            </span>
+        titulo.textContent = resultado.titulo;
 
-        `;
+
+        const descricao = document.createElement("p");
+
+        descricao.textContent = resultado.descricao;
+
+
+        const seta = document.createElement("span");
+
+        seta.className = "resultadoSeta";
+
+        seta.textContent = "→";
+
+
+        texto.appendChild(titulo);
+        texto.appendChild(descricao);
+
+        elemento.appendChild(texto);
+        elemento.appendChild(seta);
 
         resultadosPesquisa.appendChild(elemento);
 
@@ -298,94 +295,75 @@ function pesquisar() {
 
 
 /* =====================================================
-BOTÃO DA PESQUISA
+   BOTÃO DA LUPA
 ===================================================== */
 
 if (btnPesquisa) {
 
-    btnPesquisa.addEventListener(
-        "click",
-        pesquisar
-    );
+    btnPesquisa.addEventListener("click", pesquisar);
 
 }
 
 
 /* =====================================================
-ENTER NA PESQUISA
+   ENTER NA PESQUISA
 ===================================================== */
 
 if (pesquisa) {
 
-    pesquisa.addEventListener(
-        "keydown",
-        evento => {
+    pesquisa.addEventListener("keydown", function(evento) {
 
-            if (evento.key === "Enter") {
+        if (evento.key === "Enter") {
 
-                pesquisar();
-
-            }
+            pesquisar();
 
         }
-    );
+
+    });
 
 
     /* =================================================
-    PESQUISA AUTOMÁTICA ENQUANTO DIGITA
+       PESQUISA ENQUANTO DIGITA
     ================================================= */
 
-    pesquisa.addEventListener(
-        "input",
-        () => {
+    pesquisa.addEventListener("input", function() {
 
-            if (
-                pesquisa.value.trim() !== ""
-            ) {
+        if (pesquisa.value.trim() === "") {
 
-                pesquisar();
+            resultadosPesquisa.innerHTML = "";
 
-            } else {
+            resultadosPesquisa.classList.remove("ativo");
 
-                resultadosPesquisa.innerHTML = "";
-
-                resultadosPesquisa.classList.remove(
-                    "ativo"
-                );
-
-            }
-
+            return;
         }
-    );
+
+        pesquisar();
+
+    });
 
 }
 
 
 /* =====================================================
-FECHAR RESULTADOS AO CLICAR FORA
+   FECHAR RESULTADOS AO CLICAR FORA
 ===================================================== */
 
-document.addEventListener(
-    "click",
-    evento => {
+document.addEventListener("click", function(evento) {
 
-        const clicouNaPesquisa =
-            evento.target.closest(".pesquisa");
+    const clicouNaPesquisa =
+        evento.target.closest(".pesquisa");
 
-        if (!clicouNaPesquisa) {
+    if (!clicouNaPesquisa && resultadosPesquisa) {
 
-            resultadosPesquisa.classList.remove(
-                "ativo"
-            );
-
-        }
+        resultadosPesquisa.classList.remove("ativo");
 
     }
-);
+
+});
 
 
 /* =====================================================
-CURIOSIDADES
+   CURIOSIDADES
 ===================================================== */
 
 let indiceCuriosidades = 0;
@@ -400,21 +378,12 @@ function mostrarCuriosidades() {
     cardsCuriosidades.innerHTML = "";
 
 
-    /* Criar três cards */
+    /* Criar 3 cards */
 
-    for (
-        let i = 0;
-        i < 3;
-        i++
-    ) {
+    for (let i = 0; i < 3; i++) {
 
         const indice =
-            (
-                indiceCuriosidades + i
-            )
-            %
-            curiosidades.length;
-
+            (indiceCuriosidades + i) % curiosidades.length;
 
         const curiosidade =
             curiosidades[indice];
@@ -423,96 +392,119 @@ function mostrarCuriosidades() {
         const card =
             document.createElement("article");
 
-
-        card.classList.add("card");
-
-
-        card.innerHTML = `
-
-            <img
-                src="${curiosidade.imagem}"
-                alt="${curiosidade.titulo}"
-                class="imagemCard"
-                onerror="this.style.display='none'"
-            >
-
-            <div class="cardConteudo">
-
-                <h3>
-                    ${curiosidade.titulo}
-                </h3>
-
-                <p>
-                    ${curiosidade.texto}
-                </p>
-
-                <a
-                    href="${curiosidade.pagina}"
-                    class="saibaMais">
-
-                    Saiba mais →
-
-                </a>
-
-            </div>
-
-        `;
+        card.className = "card";
 
 
-        cardsCuriosidades.appendChild(
-            card
-        );
+        /* Imagem */
+
+        const imagem =
+            document.createElement("img");
+
+        imagem.src = curiosidade.imagem;
+
+        imagem.alt = curiosidade.titulo;
+
+        imagem.className = "imagemCard";
+
+
+        /* Se a imagem não existir */
+
+        imagem.onerror = function() {
+
+            this.style.display = "none";
+
+        };
+
+
+        /* Conteúdo */
+
+        const conteudo =
+            document.createElement("div");
+
+        conteudo.className = "cardConteudo";
+
+
+        const titulo =
+            document.createElement("h3");
+
+        titulo.textContent =
+            curiosidade.titulo;
+
+
+        const texto =
+            document.createElement("p");
+
+        texto.textContent =
+            curiosidade.texto;
+
+
+        const link =
+            document.createElement("a");
+
+        link.href =
+            curiosidade.pagina;
+
+        link.className =
+            "saibaMais";
+
+        link.textContent =
+            "Saiba mais →";
+
+
+        conteudo.appendChild(titulo);
+        conteudo.appendChild(texto);
+        conteudo.appendChild(link);
+
+
+        card.appendChild(imagem);
+        card.appendChild(conteudo);
+
+
+        cardsCuriosidades.appendChild(card);
 
     }
 
 }
 
 
-/* Mostrar curiosidades ao abrir o site */
+/* Mostrar curiosidades ao abrir */
 
 mostrarCuriosidades();
 
 
 /* =====================================================
-GERAR NOVAS CURIOSIDADES
+   BOTÃO "GERAR NOVAS CURIOSIDADES"
 ===================================================== */
 
 if (btnTrocarCuriosidades) {
 
-    btnTrocarCuriosidades.addEventListener(
-        "click",
-        () => {
+    btnTrocarCuriosidades.addEventListener("click", function() {
 
-            indiceCuriosidades += 3;
+        indiceCuriosidades += 3;
 
 
-            /* Voltar ao início */
+        if (indiceCuriosidades >= curiosidades.length) {
 
-            if (
-                indiceCuriosidades >=
-                curiosidades.length
-            ) {
-
-                indiceCuriosidades = 0;
-
-            }
-
-
-            mostrarCuriosidades();
+            indiceCuriosidades = 0;
 
         }
-    );
+
+
+        mostrarCuriosidades();
+
+    });
 
 }
 
 
 /* =====================================================
-MODO ESCURO
+   MODO ESCURO
 ===================================================== */
 
 if (modoEscuro) {
 
-    /* Verificar se o modo escuro estava salvo */
+
+    /* Verificar modo salvo */
 
     if (
         localStorage.getItem("modoEscuro") === "true"
@@ -523,8 +515,6 @@ if (modoEscuro) {
     }
 
 
-    /* Atualizar o ícone */
-
     function atualizarIconeTema() {
 
         const icone =
@@ -534,27 +524,34 @@ if (modoEscuro) {
             return;
         }
 
+
         const escuro =
             document.body.classList.contains("dark");
 
 
-        icone.classList.toggle(
-            "fa-moon",
-            !escuro
-        );
+        if (escuro) {
 
-        icone.classList.toggle(
-            "fa-sun",
-            escuro
-        );
+            icone.classList.remove("fa-moon");
 
+            icone.classList.add("fa-sun");
 
-        modoEscuro.setAttribute(
-            "aria-label",
-            escuro
-                ? "Desativar modo escuro"
-                : "Ativar modo escuro"
-        );
+            modoEscuro.setAttribute(
+                "aria-label",
+                "Desativar modo escuro"
+            );
+
+        } else {
+
+            icone.classList.remove("fa-sun");
+
+            icone.classList.add("fa-moon");
+
+            modoEscuro.setAttribute(
+                "aria-label",
+                "Ativar modo escuro"
+            );
+
+        }
 
     }
 
@@ -562,77 +559,60 @@ if (modoEscuro) {
     atualizarIconeTema();
 
 
-    /* Botão */
+    modoEscuro.addEventListener("click", function() {
 
-    modoEscuro.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "dark"
-            );
+        document.body.classList.toggle("dark");
 
 
-            const escuro =
-                document.body.classList.contains(
-                    "dark"
-                );
+        const escuro =
+            document.body.classList.contains("dark");
 
 
-            localStorage.setItem(
-                "modoEscuro",
-                escuro
-            );
+        localStorage.setItem(
+            "modoEscuro",
+            escuro
+        );
 
 
-            atualizarIconeTema();
+        atualizarIconeTema();
 
-        }
-    );
+    });
 
 }
 
 
 /* =====================================================
-VOLTAR AO TOPO
+   VOLTAR AO TOPO
 ===================================================== */
 
 if (topo) {
 
-    window.addEventListener(
-        "scroll",
-        () => {
 
-            if (
-                window.scrollY > 400
-            ) {
+    window.addEventListener("scroll", function() {
 
-                topo.style.display = "grid";
+        if (window.scrollY > 400) {
 
-            } else {
+            topo.style.display = "grid";
 
-                topo.style.display = "none";
+        } else {
 
-            }
+            topo.style.display = "none";
 
         }
-    );
+
+    });
 
 
-    topo.addEventListener(
-        "click",
-        () => {
+    topo.addEventListener("click", function() {
 
-            window.scrollTo({
+        window.scrollTo({
 
-                top: 0,
+            top: 0,
 
-                behavior: "smooth"
+            behavior: "smooth"
 
-            });
+        });
 
-        }
-    );
+    });
 
 }
-```
