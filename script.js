@@ -61,7 +61,7 @@ const bancoPesquisa = [
 
     {
         titulo: "Percepção das cores",
-        descricao: "Entenda como nossos olhos e cérebro percebem as .",
+        descricao: "Entenda como nossos olhos e cérebro percebem as cores .",
         palavras: [
             "cores",
             "cor",
@@ -105,7 +105,7 @@ const curiosidades = [
 
     {
         titulo: "Anatomia do olho",
-        texto: "Conheça as principais estruturas que fazem parte do olho humano.",
+        texto: "Conheça as principais estruturas que fazem parte do olho .",
         imagem: "imagens/images(4).jpeg",
         pagina: "anatomia.html"
     },
