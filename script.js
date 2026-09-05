@@ -453,11 +453,11 @@ function mostrarCuriosidades() {
 
         conteudo.appendChild(titulo);
         conteudo.appendChild(texto);
-        conteudo.appendChild(link);
-
-
-        card.appendChild(imagem);
+       
+       
         card.appendChild(conteudo);
+        card.appendChild(imagem);
+        card.appendChild(link);
 
 
         cardsCuriosidades.appendChild(card);
