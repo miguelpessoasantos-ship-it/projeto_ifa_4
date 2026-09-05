@@ -29,7 +29,7 @@ const bancoPesquisa = [
 
     {
         titulo: "Anatomia do olho",
-        descricao: "Conheça as principais partes do olho e suas funções.",
+        descricao: "Apesar dos nossos olhos erem 'pequenos', eles são estruturas cheias de partes, que em conjunto desempenham a encrível de nos fazer enxergar.",
         palavras: [
             "anatomia",
             "olho",
