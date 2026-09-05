@@ -1,0 +1,527 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anatomia do Olho | VISSION</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .paginaConteudo {
+            min-height: 100vh;
+            background: var(--fundo);
+        }
+
+        .cabecalhoPagina {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 7%;
+            background: var(--verde);
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
+        }
+
+        .logoPagina {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .voltarInicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 18px;
+            border-radius: 30px;
+
+            background: white;
+            color: var(--verde);
+
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .voltarInicio:hover {
+            transform: translateY(-2px);
+            background: var(--verde-neon);
+        }
+
+        .heroPagina {
+            max-width: 1150px;
+            margin: auto;
+            padding: 75px 7% 50px;
+            text-align: center;
+        }
+
+        .tagPagina {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 18px;
+
+            border-radius: 30px;
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .heroPagina h1 {
+            margin-bottom: 18px;
+            color: var(--texto);
+            font-size: clamp(38px, 5vw, 58px);
+        }
+
+        .heroPagina h1 span {
+            color: var(--verde);
+        }
+
+        .heroPagina p {
+            max-width: 800px;
+            margin: auto;
+
+            color: var(--cinza);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .conteudoPagina {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 7% 80px;
+        }
+
+        .tituloSecao {
+            margin-bottom: 12px;
+            color: var(--verde);
+            font-size: 32px;
+        }
+
+        .textoSecao {
+            margin-bottom: 35px;
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .partesOlho {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 70px;
+        }
+
+        .parteOlho {
+            padding: 28px;
+            background: var(--branco);
+            border-radius: 22px;
+            box-shadow: var(--sombra);
+            transition: .3s;
+        }
+
+        .parteOlho:hover {
+            transform: translateY(-7px);
+        }
+
+        .iconeParte {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+            border-radius: 15px;
+
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 22px;
+        }
+
+        .parteOlho h3 {
+            margin-bottom: 10px;
+            color: var(--texto);
+        }
+
+        .parteOlho p {
+            color: var(--cinza);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .diagrama {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .imagemAnatomia {
+            min-height: 380px;
+            border-radius: 25px;
+
+            background-image: url("imagens/images(4).jpeg");
+            background-size: cover;
+            background-position: center;
+
+            box-shadow: var(--sombra);
+        }
+
+        .listaPartes {
+            list-style: none;
+            padding: 0;
+        }
+
+        .listaPartes li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        .listaPartes i {
+            color: var(--verde);
+            margin-top: 4px;
+        }
+
+        .blocoEditavel {
+            padding: 35px;
+            margin-top: 60px;
+
+            border: 2px dashed var(--verde-claro);
+            border-radius: 25px;
+
+            background: rgba(22,141,57,.05);
+        }
+
+        .blocoEditavel h2 {
+            margin-bottom: 15px;
+            color: var(--verde);
+        }
+
+        .blocoEditavel p {
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .areaVoltar {
+            text-align: center;
+            margin-top: 55px;
+        }
+
+        .botaoVoltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 28px;
+            border-radius: 40px;
+
+            background: var(--verde);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .botaoVoltar:hover {
+            background: var(--verde-claro);
+            transform: translateY(-3px);
+        }
+
+        .dark .paginaConteudo {
+            background: #101410;
+        }
+
+        .dark .parteOlho {
+            background: #1d211d;
+        }
+
+        .dark .heroPagina h1,
+        .dark .parteOlho h3 {
+            color: #eeeeee;
+        }
+
+        .dark .heroPagina p,
+        .dark .textoSecao,
+        .dark .parteOlho p,
+        .dark .listaPartes li,
+        .dark .blocoEditavel p {
+            color: #c1c1c1;
+        }
+
+        @media(max-width:900px) {
+            .partesOlho {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .diagrama {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .partesOlho {
+                grid-template-columns: 1fr;
+            }
+
+            .heroPagina {
+                padding: 55px 6% 40px;
+            }
+
+            .conteudoPagina {
+                padding: 20px 6% 60px;
+            }
+
+            .imagemAnatomia {
+                min-height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="paginaConteudo">
+
+    <header class="cabecalhoPagina">
+
+        <a href="index.html" class="logoPagina">
+            <i class="fa-solid fa-eye"></i>
+            VISSION
+        </a>
+
+        <a href="index.html" class="voltarInicio">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar
+        </a>
+
+    </header>
+
+
+    <section class="heroPagina">
+
+        <span class="tagPagina">
+            <i class="fa-solid fa-microscope"></i>
+            ANATOMIA
+        </span>
+
+        <h1>
+            Conheça as partes do <span>olho</span>
+        </h1>
+
+        <p>
+            O olho humano é formado por várias estruturas que trabalham
+            juntas para permitir a formação da visão. Cada uma possui
+            uma função importante.
+        </p>
+
+    </section>
+
+
+    <main class="conteudoPagina">
+
+        <section>
+
+            <h2 class="tituloSecao">
+                Principais estruturas
+            </h2>
+
+            <p class="textoSecao">
+                Conheça algumas das principais partes do olho e entenda
+                qual é o papel de cada uma delas.
+            </p>
+
+            <div class="partesOlho">
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <h3>Córnea</h3>
+                    <p>
+                        É a camada transparente localizada na parte da frente
+                        do olho. Ela ajuda a proteger o olho e a focalizar a luz.
+                    </p>
+                </article>
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <h3>Íris</h3>
+                    <p>
+                        É a parte colorida do olho. Ela controla a quantidade
+                        de luz que entra pela pupila.
+                    </p>
+                </article>
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-circle-dot"></i>
+                    </div>
+                    <h3>Pupila</h3>
+                    <p>
+                        É a abertura localizada no centro da íris por onde
+                        a luz entra no interior do olho.
+                    </p>
+                </article>
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Cristalino</h3>
+                    <p>
+                        É uma estrutura transparente que ajuda a focalizar
+                        a luz sobre a retina.
+                    </p>
+                </article>
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>Retina</h3>
+                    <p>
+                        Fica na parte interna do olho e contém células
+                        sensíveis à luz, importantes para a visão.
+                    </p>
+                </article>
+
+                <article class="parteOlho">
+                    <div class="iconeParte">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3>Nervo óptico</h3>
+                    <p>
+                        É responsável por levar informações visuais da retina
+                        em direção ao cérebro.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="diagrama">
+
+            <div class="imagemAnatomia"></div>
+
+            <div>
+
+                <h2 class="tituloSecao">
+                    Como tudo se conecta?
+                </h2>
+
+                <p class="textoSecao">
+                    As estruturas do olho não trabalham separadamente.
+                    Elas formam um sistema que recebe a luz, direciona
+                    essa informação e envia sinais para o cérebro.
+                </p>
+
+                <ul class="listaPartes">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        A córnea ajuda a direcionar a luz.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        A íris controla a abertura da pupila.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        O cristalino ajuda na focalização.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        A retina recebe a informação luminosa.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        O nervo óptico leva os sinais ao cérebro.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <section class="blocoEditavel">
+
+            <h2>
+                <i class="fa-solid fa-pen-to-square"></i>
+                Área para adicionar conteúdo
+            </h2>
+
+            <p>
+                Esta área está preparada para vocês adicionarem mais
+                informações sobre a anatomia do olho.
+
+                <br><br>
+
+                Você pode colocar aqui informações sobre músculos oculares,
+                humor vítreo, humor aquoso, esclera, coroide, mácula,
+                fóvea e outras estruturas.
+            </p>
+
+        </section>
+
+
+        <div class="areaVoltar">
+
+            <a href="index.html" class="botaoVoltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para o VISSION
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+    if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("dark");
+    }
+</script>
+
+</body>
+</html>
+```

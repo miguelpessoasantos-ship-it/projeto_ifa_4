@@ -1,0 +1,642 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doenças e Problemas de Visão | VISSION</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .paginaConteudo {
+            min-height: 100vh;
+            background: var(--fundo);
+        }
+
+        .cabecalhoPagina {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 7%;
+            background: var(--verde);
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
+        }
+
+        .logoPagina {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .voltarInicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 18px;
+            border-radius: 30px;
+
+            background: white;
+            color: var(--verde);
+
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .heroPagina {
+            max-width: 1000px;
+            margin: auto;
+            padding: 75px 7% 55px;
+            text-align: center;
+        }
+
+        .tagPagina {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 18px;
+
+            border-radius: 30px;
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .heroPagina h1 {
+            margin-bottom: 18px;
+            color: var(--texto);
+            font-size: clamp(36px, 5vw, 58px);
+        }
+
+        .heroPagina h1 span {
+            color: var(--verde);
+        }
+
+        .heroPagina p {
+            color: var(--cinza);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .conteudoPagina {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 7% 80px;
+        }
+
+        .aviso {
+            padding: 22px 25px;
+            margin-bottom: 50px;
+
+            border-left: 5px solid var(--verde);
+            border-radius: 15px;
+
+            background: var(--branco);
+            color: var(--cinza);
+
+            line-height: 1.7;
+            box-shadow: var(--sombra);
+        }
+
+        .aviso strong {
+            color: var(--verde);
+        }
+
+        .tituloSecao {
+            margin-bottom: 12px;
+            color: var(--verde);
+            font-size: 32px;
+        }
+
+        .textoSecao {
+            margin-bottom: 35px;
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .cardsDoencas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .cardDoenca {
+            padding: 30px;
+
+            background: var(--branco);
+            border-radius: 22px;
+            box-shadow: var(--sombra);
+
+            transition: .3s;
+        }
+
+        .cardDoenca:hover {
+            transform: translateY(-6px);
+        }
+
+        .cabecalhoDoenca {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .iconeDoenca {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 15px;
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 21px;
+        }
+
+        .cardDoenca h3 {
+            color: var(--texto);
+            font-size: 21px;
+        }
+
+        .cardDoenca p {
+            color: var(--cinza);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .sintomas {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid #e2e2e2;
+        }
+
+        .sintomas strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--verde);
+        }
+
+        .sintomas span {
+            color: var(--cinza);
+            font-size: 13px;
+        }
+
+        .blocoCuidados {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+
+            padding: 40px;
+            margin: 60px 0;
+
+            border-radius: 28px;
+            background: var(--verde);
+            color: white;
+        }
+
+        .blocoCuidados h2 {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .blocoCuidados p {
+            line-height: 1.8;
+            opacity: .9;
+        }
+
+        .listaCuidados {
+            list-style: none;
+            padding: 0;
+        }
+
+        .listaCuidados li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .listaCuidados i {
+            color: var(--verde-neon);
+            margin-top: 4px;
+        }
+
+        .blocoEditavel {
+            padding: 35px;
+
+            border: 2px dashed var(--verde-claro);
+            border-radius: 25px;
+
+            background: rgba(22,141,57,.05);
+        }
+
+        .blocoEditavel h2 {
+            margin-bottom: 15px;
+            color: var(--verde);
+        }
+
+        .blocoEditavel p {
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .areaVoltar {
+            text-align: center;
+            margin-top: 55px;
+        }
+
+        .botaoVoltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 28px;
+            border-radius: 40px;
+
+            background: var(--verde);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dark .paginaConteudo {
+            background: #101410;
+        }
+
+        .dark .cardDoenca,
+        .dark .aviso {
+            background: #1d211d;
+        }
+
+        .dark .heroPagina h1,
+        .dark .cardDoenca h3 {
+            color: #eeeeee;
+        }
+
+        .dark .heroPagina p,
+        .dark .cardDoenca p,
+        .dark .sintomas span,
+        .dark .blocoEditavel p,
+        .dark .aviso {
+            color: #c1c1c1;
+        }
+
+        .dark .sintomas {
+            border-color: #303630;
+        }
+
+        @media(max-width:750px) {
+            .cardsDoencas,
+            .blocoCuidados {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .heroPagina {
+                padding: 55px 6% 40px;
+            }
+
+            .conteudoPagina {
+                padding: 20px 6% 60px;
+            }
+
+            .blocoCuidados {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="paginaConteudo">
+
+    <header class="cabecalhoPagina">
+
+        <a href="index.html" class="logoPagina">
+            <i class="fa-solid fa-eye"></i>
+            VISSION
+        </a>
+
+        <a href="index.html" class="voltarInicio">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar
+        </a>
+
+    </header>
+
+
+    <section class="heroPagina">
+
+        <span class="tagPagina">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            SAÚDE DA VISÃO
+        </span>
+
+        <h1>
+            Doenças e problemas de <span>visão</span>
+        </h1>
+
+        <p>
+            Existem diferentes condições que podem afetar a capacidade
+            de enxergar. Conhecer essas condições ajuda a entender a
+            importância dos cuidados com os olhos.
+        </p>
+
+    </section>
+
+
+    <main class="conteudoPagina">
+
+        <div class="aviso">
+            <strong>Importante:</strong>
+            as informações desta página têm finalidade educativa.
+            Problemas de visão devem ser avaliados por profissionais
+            de saúde especializados.
+        </div>
+
+
+        <section>
+
+            <h2 class="tituloSecao">
+                Problemas comuns de visão
+            </h2>
+
+            <p class="textoSecao">
+                Alguns problemas podem alterar a forma como uma pessoa
+                percebe objetos, distâncias ou detalhes.
+            </p>
+
+            <div class="cardsDoencas">
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Miopia</h3>
+
+                    </div>
+
+                    <p>
+                        Na miopia, objetos próximos podem ser vistos com
+                        mais nitidez enquanto objetos distantes podem
+                        apresentar dificuldade de foco.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Dificuldade para enxergar objetos distantes.</span>
+                    </div>
+
+                </article>
+
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Hipermetropia</h3>
+
+                    </div>
+
+                    <p>
+                        É uma condição em que o foco da imagem pode ocorrer
+                        de maneira inadequada, podendo causar dificuldade
+                        principalmente para determinadas distâncias.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Pode causar dificuldade de foco e cansaço visual.</span>
+                    </div>
+
+                </article>
+
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Astigmatismo</h3>
+
+                    </div>
+
+                    <p>
+                        Está relacionado a uma curvatura irregular de
+                        estruturas ópticas do olho, podendo deixar a visão
+                        desfocada ou distorcida.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Possível visão borrada ou distorcida.</span>
+                    </div>
+
+                </article>
+
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Daltonismo</h3>
+
+                    </div>
+
+                    <p>
+                        O daltonismo envolve diferenças na percepção de
+                        determinadas cores, podendo dificultar a distinção
+                        entre alguns tons.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Dificuldade em diferenciar determinadas cores.</span>
+                    </div>
+
+                </article>
+
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Catarata</h3>
+
+                    </div>
+
+                    <p>
+                        A catarata ocorre quando o cristalino perde sua
+                        transparência, podendo prejudicar a passagem da luz.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Visão pode ficar embaçada ou menos nítida.</span>
+                    </div>
+
+                </article>
+
+
+                <article class="cardDoenca">
+
+                    <div class="cabecalhoDoenca">
+
+                        <div class="iconeDoenca">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <h3>Glaucoma</h3>
+
+                    </div>
+
+                    <p>
+                        Glaucoma é um grupo de condições que pode causar
+                        danos ao nervo óptico e comprometer a visão.
+                    </p>
+
+                    <div class="sintomas">
+                        <strong>Característica:</strong>
+                        <span>Pode afetar progressivamente o campo visual.</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="blocoCuidados">
+
+            <div>
+
+                <h2>
+                    Cuidados com a visão
+                </h2>
+
+                <p>
+                    Há hábitos importantes para manter a saúde dos olhos
+                    e identificar alterações visuais.
+                </p>
+
+            </div>
+
+            <ul class="listaCuidados">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Fazer avaliações oftalmológicas quando recomendadas.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Evitar olhar diretamente para fontes muito intensas de luz.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Manter uma boa higiene das mãos antes de tocar os olhos.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Procurar orientação profissional diante de alterações persistentes.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <section class="blocoEditavel">
+
+            <h2>
+                <i class="fa-solid fa-pen-to-square"></i>
+                Área para adicionar doenças
+            </h2>
+
+            <p>
+                Esta área pode ser utilizada para acrescentar outras
+                condições relacionadas à visão.
+
+                <br><br>
+
+                Vocês podem adicionar novos cards com informações sobre
+                presbiopia, degeneração macular, conjuntivite e outras
+                condições que fizerem parte da pesquisa do projeto.
+            </p>
+
+        </section>
+
+
+        <div class="areaVoltar">
+
+            <a href="index.html" class="botaoVoltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para o VISSION
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+    if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("dark");
+    }
+</script>
+
+</body>
+</html>
+```

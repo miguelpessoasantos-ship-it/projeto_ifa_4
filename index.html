@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>VISSION - Visão Humana</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==============================
+     CABEÇALHO
+=============================== -->
+
+<header>
+
+    <a href="#inicio" class="logo">
+        <img src="imagens/logo.png" alt="Logo VISSION">
+        <span>VISSION</span>
+    </a>
+
+    <nav>
+        <a href="#explorar">Explorar</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <button id="modoEscuro" aria-label="Ativar modo escuro">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+</header>
+
+
+<main>
+
+    <!-- ==============================
+         INÍCIO
+    =============================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="heroTexto">
+
+            <span class="tag">
+                🔬 CIÊNCIA • VISÃO HUMANA
+            </span>
+
+            <h1>
+                Descubra como funciona a visão humana
+            </h1>
+
+            <p>
+                Entenda como nossos olhos captam a luz e como o cérebro
+                transforma essas informações no mundo que enxergamos.
+            </p>
+
+            <a href="#explorar" class="botao">
+                Explorar agora →
+            </a>
+
+        </div>
+
+
+        <div class="heroImagem"></div>
+
+    </section>
+
+
+    <!-- ==============================
+         PESQUISA
+    =============================== -->
+
+    <section class="pesquisa">
+
+        <div class="barraPesquisa">
+
+            <input
+                type="search"
+                id="pesquisa"
+                placeholder="Pesquise sobre visão..."
+                autocomplete="off"
+                aria-label="Pesquisar">
+
+            <button
+                id="btnPesquisa"
+                aria-label="Pesquisar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULTADOS DA PESQUISA -->
+
+        <div
+            id="resultadosPesquisa"
+            class="resultadosPesquisa">
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         EXPLORAR
+    =============================== -->
+
+    <section class="explorar" id="explorar">
+
+        <div class="tituloSecao">
+
+            <span>APRENDA</span>
+
+            <h2>
+                Explore a visão humana
+            </h2>
+
+            <p>
+                Escolha um assunto e descubra informações interessantes.
+            </p>
+
+        </div>
+
+
+        <div class="botoes">
+
+            <a href="visao.html" class="botaoExplorar">
+                👁️ Como enxergamos
+            </a>
+
+            <a href="anatomia.html" class="botaoExplorar">
+                🧠 Anatomia
+            </a>
+
+            <a href="doencas.html" class="botaoExplorar">
+                ❤️ Doenças
+            </a>
+
+            <a href="cores.html" class="botaoExplorar">
+                🌈 Cores
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CURIOSIDADES
+    =============================== -->
+
+    <section
+        class="curiosidades"
+        id="curiosidades">
+
+        <div class="tituloSecao">
+
+            <span>DESCUBRA</span>
+
+            <h2>
+                Curiosidades
+            </h2>
+
+            <p>
+                Conheça alguns aspectos interessantes da visão humana.
+            </p>
+
+        </div>
+
+
+        <!-- OS CARDS SÃO CRIADOS PELO JAVASCRIPT -->
+
+        <div
+            class="cards"
+            id="cardsCuriosidades">
+        </div>
+
+
+        <div class="areaBotaoCuriosidade">
+
+            <button id="btnTrocarCuriosidades">
+                🔄 Gerar novas curiosidades
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         QUIZ
+    =============================== -->
+
+    <section class="proximaPagina">
+
+        <div>
+
+            <span>
+                🎮 TESTE SEUS CONHECIMENTOS
+            </span>
+
+            <h2>
+                Quer testar seus conhecimentos?
+            </h2>
+
+            <p>
+                Depois de aprender sobre a visão humana,
+                teste tudo o que você descobriu em nosso quiz.
+            </p>
+
+        </div>
+
+
+        <!-- FUTURA PÁGINA DO QUIZ -->
+
+        <a
+            href="quiz.html"
+            class="botao botaoBranco">
+
+            Fazer o quiz →
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ==============================
+     BOTÃO VOLTAR AO TOPO
+=============================== -->
+
+<button
+    id="topo"
+    aria-label="Voltar ao topo">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- ==============================
+     RODAPÉ
+=============================== -->
+
+<footer id="contato">
+
+    <div class="footerLogo">
+
+        <img
+            src="imagens/logo.png"
+            alt="Logo VISSION">
+
+        <strong>
+            VISSION
+        </strong>
+
+    </div>
+
+
+    <p>
+        Projeto educativo sobre a visão humana.
+    </p>
+
+
+    <h3>
+        Desenvolvido por<br>
+        Miguel • Gabriel • Victor • Murillo
+    </h3>
+
+
+    <div class="redesSociais">
+
+        <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="#" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+    </div>
+
+
+    <small>
+        © 2026 VISSION — Todos os direitos reservados.
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>

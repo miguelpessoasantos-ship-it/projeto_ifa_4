@@ -1,0 +1,802 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Como Enxergamos | VISSION</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           PÁGINA - COMO ENXERGAMOS
+        ========================================= */
+
+        .paginaVisao {
+            min-height: 100vh;
+            background: var(--fundo);
+        }
+
+        /* Cabeçalho */
+        .cabecalhoPagina {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 7%;
+
+            background: var(--verde);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .12);
+        }
+
+        .logoPagina {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logoPagina i {
+            font-size: 25px;
+        }
+
+        .voltarInicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            background: white;
+            color: var(--verde);
+
+            text-decoration: none;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .voltarInicio:hover {
+            transform: translateY(-2px);
+            background: var(--verde-neon);
+        }
+
+        /* Hero */
+        .heroVisao {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 7% 60px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .heroTexto .tag {
+            display: inline-block;
+
+            padding: 8px 16px;
+            margin-bottom: 20px;
+
+            border-radius: 30px;
+
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .heroTexto h1 {
+            margin-bottom: 20px;
+
+            color: var(--texto);
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.1;
+        }
+
+        .heroTexto h1 span {
+            color: var(--verde);
+        }
+
+        .heroTexto p {
+            color: var(--cinza);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .imagemVisao {
+            min-height: 360px;
+
+            border-radius: 30px;
+
+            background-image:
+                linear-gradient(
+                    rgba(11, 93, 30, .12),
+                    rgba(11, 93, 30, .12)
+                ),
+                url("imagens/images.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            box-shadow: var(--sombra);
+        }
+
+        /* Conteúdo */
+        .conteudoVisao {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 7% 80px;
+        }
+
+        .tituloSecao {
+            margin-bottom: 15px;
+
+            color: var(--verde);
+            font-size: 32px;
+        }
+
+        .textoSecao {
+            margin-bottom: 40px;
+
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        /* Cards */
+        .cardsVisao {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+
+            margin: 30px 0 70px;
+        }
+
+        .cardVisao {
+            padding: 30px;
+
+            background: var(--branco);
+            border-radius: 22px;
+
+            box-shadow: var(--sombra);
+
+            transition: .3s;
+        }
+
+        .cardVisao:hover {
+            transform: translateY(-7px);
+        }
+
+        .iconeVisao {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 15px;
+
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 23px;
+        }
+
+        .cardVisao h3 {
+            margin-bottom: 12px;
+
+            color: var(--texto);
+            font-size: 20px;
+        }
+
+        .cardVisao p {
+            color: var(--cinza);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* Caminho da luz */
+        .caminhoLuz {
+            margin: 50px 0 70px;
+        }
+
+        .etapasLuz {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .etapa {
+            position: relative;
+
+            padding: 25px 20px;
+
+            background: var(--branco);
+            border-radius: 20px;
+
+            box-shadow: var(--sombra);
+        }
+
+        .numeroEtapa {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            margin-bottom: 15px;
+
+            border-radius: 50%;
+
+            background: var(--verde);
+            color: white;
+
+            font-weight: 700;
+        }
+
+        .etapa h3 {
+            margin-bottom: 10px;
+            color: var(--verde);
+        }
+
+        .etapa p {
+            color: var(--cinza);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Destaque */
+        .destaqueVisao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+
+            margin: 70px 0;
+
+            padding: 40px;
+
+            border-radius: 30px;
+
+            background: var(--verde);
+            color: white;
+        }
+
+        .destaqueVisao h2 {
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .destaqueVisao p {
+            line-height: 1.8;
+            opacity: .9;
+        }
+
+        .listaDestaque {
+            list-style: none;
+            padding: 0;
+        }
+
+        .listaDestaque li {
+            display: flex;
+            gap: 12px;
+
+            margin-bottom: 16px;
+
+            line-height: 1.5;
+        }
+
+        .listaDestaque i {
+            color: var(--verde-neon);
+            margin-top: 4px;
+        }
+
+        /* Bloco editável */
+        .blocoEditavel {
+            padding: 35px;
+            margin-top: 50px;
+
+            border: 2px dashed var(--verde-claro);
+            border-radius: 25px;
+
+            background: rgba(22, 141, 57, .05);
+        }
+
+        .blocoEditavel h2 {
+            color: var(--verde);
+            margin-bottom: 15px;
+        }
+
+        .blocoEditavel p {
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        /* Botão voltar */
+        .areaVoltar {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .botaoVoltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 28px;
+
+            border-radius: 40px;
+
+            background: var(--verde);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .botaoVoltar:hover {
+            background: var(--verde-claro);
+            transform: translateY(-3px);
+        }
+
+        /* Dark Mode */
+        .dark .paginaVisao {
+            background: #101410;
+        }
+
+        .dark .cardVisao,
+        .dark .etapa {
+            background: #1d211d;
+        }
+
+        .dark .cardVisao h3,
+        .dark .heroTexto h1 {
+            color: #eeeeee;
+        }
+
+        .dark .cardVisao p,
+        .dark .etapa p,
+        .dark .textoSecao,
+        .dark .heroTexto p,
+        .dark .blocoEditavel p {
+            color: #c1c1c1;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .heroVisao {
+                grid-template-columns: 1fr;
+            }
+
+            .cardsVisao {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .etapasLuz {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .destaqueVisao {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cabecalhoPagina {
+                padding: 13px 5%;
+            }
+
+            .logoPagina {
+                font-size: 20px;
+            }
+
+            .voltarInicio {
+                padding: 8px 13px;
+                font-size: 13px;
+            }
+
+            .heroVisao {
+                padding: 55px 6% 40px;
+            }
+
+            .imagemVisao {
+                min-height: 260px;
+            }
+
+            .conteudoVisao {
+                padding: 20px 6% 60px;
+            }
+
+            .cardsVisao,
+            .etapasLuz {
+                grid-template-columns: 1fr;
+            }
+
+            .destaqueVisao {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="paginaVisao">
+
+        <!-- =========================================
+             CABEÇALHO
+        ========================================== -->
+
+        <header class="cabecalhoPagina">
+
+            <a href="index.html" class="logoPagina">
+                <i class="fa-solid fa-eye"></i>
+                VISSION
+            </a>
+
+            <a href="index.html" class="voltarInicio">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar
+            </a>
+
+        </header>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="heroVisao">
+
+            <div class="heroTexto">
+
+                <span class="tag">
+                    <i class="fa-solid fa-eye"></i>
+                    COMO ENXERGAMOS
+                </span>
+
+                <h1>
+                    Como nossos olhos
+                    <span>enxergam?</span>
+                </h1>
+
+                <p>
+                    Enxergar parece algo simples, mas por trás de cada imagem
+                    que vemos existe um processo envolvendo luz, olhos,
+                    nervos e cérebro.
+                </p>
+
+            </div>
+
+            <div class="imagemVisao"></div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+        <main class="conteudoVisao">
+
+            <section>
+
+                <h2 class="tituloSecao">
+                    O que acontece quando vemos alguma coisa?
+                </h2>
+
+                <p class="textoSecao">
+                    Para enxergarmos, a luz refletida pelos objetos entra nos
+                    nossos olhos. Essa luz passa por diferentes estruturas
+                    oculares até chegar à retina. A retina transforma a luz
+                    em sinais elétricos, que são enviados ao cérebro através
+                    do nervo óptico. O cérebro então interpreta esses sinais
+                    e cria aquilo que percebemos como uma imagem.
+                </p>
+
+            </section>
+
+
+            <!-- =========================================
+                 TRÊS PRINCIPAIS ETAPAS
+            ========================================== -->
+
+            <section>
+
+                <h2 class="tituloSecao">
+                    As três grandes etapas da visão
+                </h2>
+
+                <p class="textoSecao">
+                    A visão depende da colaboração entre os olhos e o cérebro.
+                    Cada parte possui uma função importante nesse processo.
+                </p>
+
+                <div class="cardsVisao">
+
+                    <article class="cardVisao">
+
+                        <div class="iconeVisao">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <h3>1. Entrada da luz</h3>
+
+                        <p>
+                            A luz refletida pelos objetos entra no olho
+                            principalmente através da pupila. A córnea e o
+                            cristalino ajudam a direcionar essa luz.
+                        </p>
+
+                    </article>
+
+
+                    <article class="cardVisao">
+
+                        <div class="iconeVisao">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <h3>2. Transformação</h3>
+
+                        <p>
+                            Na retina, células especializadas detectam a luz
+                            e transformam essas informações em sinais que
+                            podem ser transmitidos pelo sistema nervoso.
+                        </p>
+
+                    </article>
+
+
+                    <article class="cardVisao">
+
+                        <div class="iconeVisao">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <h3>3. Interpretação</h3>
+
+                        <p>
+                            Os sinais chegam ao cérebro pelo nervo óptico.
+                            O cérebro organiza essas informações e produz
+                            nossa percepção visual.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 CAMINHO DA LUZ
+            ========================================== -->
+
+            <section class="caminhoLuz">
+
+                <h2 class="tituloSecao">
+                    O caminho da luz
+                </h2>
+
+                <p class="textoSecao">
+                    A luz percorre várias estruturas do olho antes de
+                    participar da formação da imagem.
+                </p>
+
+                <div class="etapasLuz">
+
+                    <article class="etapa">
+
+                        <span class="numeroEtapa">1</span>
+
+                        <h3>Córnea</h3>
+
+                        <p>
+                            É a parte transparente localizada na frente do
+                            olho. Ela ajuda a direcionar e focalizar a luz.
+                        </p>
+
+                    </article>
+
+
+                    <article class="etapa">
+
+                        <span class="numeroEtapa">2</span>
+
+                        <h3>Pupila</h3>
+
+                        <p>
+                            É a abertura no centro da íris por onde a luz
+                            entra no interior do olho.
+                        </p>
+
+                    </article>
+
+
+                    <article class="etapa">
+
+                        <span class="numeroEtapa">3</span>
+
+                        <h3>Cristalino</h3>
+
+                        <p>
+                            Essa estrutura ajuda a focalizar a luz para que
+                            ela chegue à retina.
+                        </p>
+
+                    </article>
+
+
+                    <article class="etapa">
+
+                        <span class="numeroEtapa">4</span>
+
+                        <h3>Retina</h3>
+
+                        <p>
+                            A retina recebe a luz e contém células que
+                            participam da transformação da informação
+                            luminosa em sinais nervosos.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 DESTAQUE
+            ========================================== -->
+
+            <section class="destaqueVisao">
+
+                <div>
+
+                    <h2>
+                        E onde entra o cérebro?
+                    </h2>
+
+                    <p>
+                        Os olhos captam informações, mas a percepção visual
+                        não acontece somente dentro deles. O cérebro recebe
+                        e interpreta os sinais enviados pelos olhos.
+                    </p>
+
+                </div>
+
+
+                <ul class="listaDestaque">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>A retina detecta informações luminosas.</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>O nervo óptico transmite sinais ao cérebro.</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>O cérebro organiza e interpreta essas informações.</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Assim conseguimos perceber formas, movimento e cores.</span>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- =========================================
+                 ÁREA PARA ADICIONAR INFORMAÇÕES
+            ========================================== -->
+
+            <section class="blocoEditavel">
+
+                <h2>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Mais informações
+                </h2>
+
+                <p>
+                    <!--
+                        ÁREA EDITÁVEL
+
+                        Você pode apagar este texto e colocar aqui novas
+                        informações sobre a visão.
+
+                        Exemplos de assuntos:
+
+                        - Como funciona a visão binocular
+                        - Por que piscamos
+                        - Como enxergamos no escuro
+                        - Como percebemos movimentos
+                        - A relação entre olhos e cérebro
+                        - Curiosidades sobre a visão
+                    -->
+
+                    Esta área foi deixada preparada para que você possa
+                    adicionar novas informações ao projeto conforme o
+                    desenvolvimento do site.
+                </p>
+
+            </section>
+
+
+            <!-- =========================================
+                 BOTÃO VOLTAR
+            ========================================== -->
+
+            <div class="areaVoltar">
+
+                <a href="index.html" class="botaoVoltar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar para o VISSION
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        /*
+         * Mantém o modo escuro da página inicial.
+         * Se o usuário ativou o modo escuro no index.html,
+         * esta página também poderá utilizá-lo.
+         */
+
+        const modoEscuro = localStorage.getItem("modoEscuro");
+
+        if (modoEscuro === "true") {
+            document.body.classList.add("dark");
+        }
+
+    </script>
+
+</body>
+</html>
+```

@@ -1,0 +1,553 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Percepção das Cores | VISSION</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .paginaCores {
+            min-height: 100vh;
+            background: var(--fundo);
+        }
+
+        .cabecalhoPagina {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 7%;
+            background: var(--verde);
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
+        }
+
+        .logoPagina {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .voltarInicio {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 18px;
+            border-radius: 30px;
+
+            background: white;
+            color: var(--verde);
+
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .heroCores {
+            max-width: 1050px;
+            margin: auto;
+            padding: 75px 7% 55px;
+            text-align: center;
+        }
+
+        .tagCores {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 18px;
+
+            border-radius: 30px;
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .heroCores h1 {
+            margin-bottom: 18px;
+            color: var(--texto);
+            font-size: clamp(38px, 5vw, 60px);
+        }
+
+        .heroCores h1 span {
+            color: var(--verde);
+        }
+
+        .heroCores p {
+            max-width: 800px;
+            margin: auto;
+
+            color: var(--cinza);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .conteudoCores {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 7% 80px;
+        }
+
+        .tituloSecao {
+            margin-bottom: 12px;
+            color: var(--verde);
+            font-size: 32px;
+        }
+
+        .textoSecao {
+            margin-bottom: 35px;
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .espectro {
+            display: flex;
+            height: 90px;
+            overflow: hidden;
+
+            margin: 35px 0 70px;
+
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+        }
+
+        .cor {
+            flex: 1;
+        }
+
+        .vermelho { background: #e53935; }
+        .laranja { background: #fb8c00; }
+        .amarelo { background: #fdd835; }
+        .verde { background: #43a047; }
+        .azul { background: #1e88e5; }
+        .anil { background: #3949ab; }
+        .violeta { background: #8e24aa; }
+
+        .cardsCores {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .cardCor {
+            padding: 30px;
+
+            background: var(--branco);
+            border-radius: 22px;
+
+            box-shadow: var(--sombra);
+            transition: .3s;
+        }
+
+        .cardCor:hover {
+            transform: translateY(-7px);
+        }
+
+        .iconeCor {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 15px;
+            background: var(--verde-neon);
+            color: var(--verde);
+
+            font-size: 22px;
+        }
+
+        .cardCor h3 {
+            margin-bottom: 12px;
+            color: var(--texto);
+        }
+
+        .cardCor p {
+            color: var(--cinza);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .blocoCores {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+
+            margin: 60px 0;
+            padding: 40px;
+
+            border-radius: 28px;
+            background: var(--verde);
+            color: white;
+        }
+
+        .blocoCores h2 {
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .blocoCores p {
+            line-height: 1.8;
+            opacity: .9;
+        }
+
+        .listaCores {
+            list-style: none;
+            padding: 0;
+        }
+
+        .listaCores li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .listaCores i {
+            color: var(--verde-neon);
+            margin-top: 4px;
+        }
+
+        .blocoEditavel {
+            padding: 35px;
+
+            border: 2px dashed var(--verde-claro);
+            border-radius: 25px;
+
+            background: rgba(22,141,57,.05);
+        }
+
+        .blocoEditavel h2 {
+            margin-bottom: 15px;
+            color: var(--verde);
+        }
+
+        .blocoEditavel p {
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .areaVoltar {
+            text-align: center;
+            margin-top: 55px;
+        }
+
+        .botaoVoltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 28px;
+            border-radius: 40px;
+
+            background: var(--verde);
+            color: white;
+
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dark .paginaCores {
+            background: #101410;
+        }
+
+        .dark .cardCor {
+            background: #1d211d;
+        }
+
+        .dark .heroCores h1,
+        .dark .cardCor h3 {
+            color: #eeeeee;
+        }
+
+        .dark .heroCores p,
+        .dark .textoSecao,
+        .dark .cardCor p,
+        .dark .blocoEditavel p {
+            color: #c1c1c1;
+        }
+
+        @media(max-width:900px) {
+            .cardsCores {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .blocoCores {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .cardsCores {
+                grid-template-columns: 1fr;
+            }
+
+            .heroCores {
+                padding: 55px 6% 40px;
+            }
+
+            .conteudoCores {
+                padding: 20px 6% 60px;
+            }
+
+            .espectro {
+                height: 60px;
+            }
+
+            .blocoCores {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="paginaCores">
+
+    <header class="cabecalhoPagina">
+
+        <a href="index.html" class="logoPagina">
+            <i class="fa-solid fa-eye"></i>
+            VISSION
+        </a>
+
+        <a href="index.html" class="voltarInicio">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar
+        </a>
+
+    </header>
+
+
+    <section class="heroCores">
+
+        <span class="tagCores">
+            <i class="fa-solid fa-palette"></i>
+            PERCEPÇÃO DAS CORES
+        </span>
+
+        <h1>
+            Como enxergamos as <span>cores?</span>
+        </h1>
+
+        <p>
+            As cores que percebemos são resultado da interação entre a luz,
+            os olhos e o cérebro. Vamos entender como esse processo acontece.
+        </p>
+
+    </section>
+
+
+    <main class="conteudoCores">
+
+        <section>
+
+            <h2 class="tituloSecao">
+                A luz e as cores
+            </h2>
+
+            <p class="textoSecao">
+                A luz visível é formada por diferentes comprimentos de onda.
+                Quando a luz chega aos nossos olhos, células especializadas
+                presentes na retina ajudam a identificar diferentes
+                informações relacionadas às cores.
+            </p>
+
+            <div class="espectro">
+
+                <div class="cor vermelho"></div>
+                <div class="cor laranja"></div>
+                <div class="cor amarelo"></div>
+                <div class="cor verde"></div>
+                <div class="cor azul"></div>
+                <div class="cor anil"></div>
+                <div class="cor violeta"></div>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2 class="tituloSecao">
+                Os cones da retina
+            </h2>
+
+            <p class="textoSecao">
+                Na retina existem células chamadas cones. Elas participam
+                da percepção das cores e funcionam principalmente em
+                condições de iluminação adequada.
+            </p>
+
+            <div class="cardsCores">
+
+                <article class="cardCor">
+
+                    <div class="iconeCor">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+
+                    <h3>Cones</h3>
+
+                    <p>
+                        São células da retina importantes para a visão
+                        das cores e para perceber detalhes com maior nitidez.
+                    </p>
+
+                </article>
+
+
+                <article class="cardCor">
+
+                    <div class="iconeCor">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Luz</h3>
+
+                    <p>
+                        A luz que chega aos olhos contém informações que
+                        contribuem para aquilo que percebemos como diferentes
+                        cores.
+                    </p>
+
+                </article>
+
+
+                <article class="cardCor">
+
+                    <div class="iconeCor">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3>Cérebro</h3>
+
+                    <p>
+                        O cérebro recebe os sinais enviados pelos olhos e
+                        participa da interpretação das informações visuais.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="blocoCores">
+
+            <div>
+
+                <h2>
+                    Por que uma maçã parece vermelha?
+                </h2>
+
+                <p>
+                    Quando a luz atinge um objeto, diferentes partes da luz
+                    podem ser absorvidas ou refletidas. A luz que chega aos
+                    nossos olhos influencia a cor que percebemos.
+                </p>
+
+            </div>
+
+
+            <ul class="listaCores">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    A luz ilumina o objeto.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    O objeto absorve parte da luz.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Outra parte da luz é refletida.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    A luz refletida chega aos nossos olhos.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    O cérebro interpreta essa informação.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <section class="blocoEditavel">
+
+            <h2>
+                <i class="fa-solid fa-pen-to-square"></i>
+                Área para adicionar conteúdo
+            </h2>
+
+            <p>
+                Esta área pode receber novas informações sobre cores.
+
+                <br><br>
+
+                Vocês podem adicionar conteúdos sobre mistura de cores,
+                arco-íris, visão noturna, daltonismo, cores primárias,
+                percepção visual e outros assuntos relacionados.
+            </p>
+
+        </section>
+
+
+        <div class="areaVoltar">
+
+            <a href="index.html" class="botaoVoltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para o VISSION
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+    if (localStorage.getItem("modoEscuro") === "true") {
+        document.body.classList.add("dark");
+    }
+</script>
+
+</body>
+</html>
+```
