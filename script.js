@@ -105,7 +105,7 @@ const curiosidades = [
 
     {
         titulo: "Anatomia do olho",
-        texto: "Conheça as principais estruturas .",
+        texto: "Apesar dos nossos olhos serem 'pequenos', eles são estruturas cheias de partes, que em conjunto desempenham a encrível função de nos fazer enxergar.",
         imagem: "imagens/images(4).jpeg",
         pagina: "anatomia.html"
     },
