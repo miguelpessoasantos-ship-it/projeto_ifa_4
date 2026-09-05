@@ -91,36 +91,36 @@ const curiosidades = [
 
     {
         titulo: "Percepção das cores",
-        texto: "A cor é percebida através dos cones na nossa visão. Existem cerca de seis milões de cones e a ausência ou deficiência dos cones causa daltonismo.",
-        imagem: "imagens/images(2).jpeg",
+        texto: "A cor é percebida através dos cones na nossa visão. Existem cerca de seis milhões de cones e a ausência ou deficiência dos cones causa daltonismo.",
+        imagem: "imagens/imagem_percepção_das_cores.png",
         pagina: "cores.html"
     },
 
     {
         titulo: "O cérebro e a visão",
-        texto: "Nossos olhos funcionam como câmeras altamente sofisticadas, capitando luz, cores e formas, enquanto o cérebro interpreta tudo isso em frações de segundos.",
-        imagem: "imagens/images(3).jpeg",
+        texto: "Nossos olhos funcionam como câmeras altamente sofisticadas, captando luz, cores e formas, enquanto o cérebro interpreta tudo isso em frações de segundos.",
+        imagem: "imagens/imagem_cerebro_e_a_visão.png",
         pagina: "visao.html"
     },
 
     {
         titulo: "Anatomia do olho",
-        texto: "Apesar dos nossos olhos serem 'pequenos', eles são estruturas cheias de partes, que em conjunto desempenham a encrível função de nos fazer enxergar.",
-        imagem: "imagens/images(4).jpeg",
+        texto: "Apesar de nossos olhos serem pequenos, eles são estruturas cheias de partes que, em conjunto, desempenham a incrível função de nos fazer enxergar.",
+        imagem: "imagens/imagem_anatomia_do_olho.png",
         pagina: "anatomia.html"
     },
 
     {
         titulo: "A retina",
         texto: "A retina é uma ponte fundamental entre a luz que entra em nossos olhos e as imagens que você vê.",
-        imagem: "imagens/images(5).jpeg",
+        imagem: "imagens/imagem_retina_do_olho.png",
         pagina: "anatomia.html"
     },
 
     {
         titulo: "Problemas de visão",
-        texto: "Defeitos na visão humana decorrem de anomalis no olho, que podem resultar em dificuldades para enxergar.",
-        imagem: "imagens/images(6).jpeg",
+        texto: "Conheça alguns problemas que podem afetar a qualidade da visão.",
+        imagem: "imagens/imagem_problema_de_visão.png",
         pagina: "doencas.html"
     }
 
