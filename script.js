@@ -105,7 +105,7 @@ const curiosidades = [
 
     {
         titulo: "Anatomia do olho",
-        texto: "Conheça as principais estruturas que fazem parte do olho .",
+        texto: "Conheça as principais estruturas .",
         imagem: "imagens/images(4).jpeg",
         pagina: "anatomia.html"
     },
