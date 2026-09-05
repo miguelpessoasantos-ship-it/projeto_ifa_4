@@ -1,5 +1,5 @@
 /* =====================================================
-   VISSION
+   VISIOON
    SCRIPT DA PÁGINA INICIAL
 ===================================================== */
 
@@ -85,7 +85,7 @@ const curiosidades = [
     {
         titulo: "Como enxergamos?",
         texto: "A visão é o sentido mais importante de todos e acaba exigindo um terço da nossa atividade cerebral.",
-        imagem: "imagens/images(1).jpeg",
+        imagem: "imagens/imagen_como_enxergamos.png.jpeg",
         pagina: "visao.html"
     },
 
