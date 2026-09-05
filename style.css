@@ -482,16 +482,6 @@ section {
     border-radius: 0;
 }
 
-/* IMAGEM */
-
-.imagem {
-    height: 220px;
-
-    background:
-        center/cover no-repeat;
-}
-
-
 /* CONTEÚDO */
 
 .cardConteudo {
