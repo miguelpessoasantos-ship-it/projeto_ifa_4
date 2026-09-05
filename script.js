@@ -84,21 +84,21 @@ const curiosidades = [
 
     {
         titulo: "Como enxergamos?",
-        texto: "Descubra como a luz percorre o olho até chegar ao cérebro.",
+        texto: "A visão é o sentido mais importante de todos e acaba exigindo um terço da nossa atividade cerebral.",
         imagem: "imagens/images(1).jpeg",
         pagina: "visao.html"
     },
 
     {
         titulo: "Percepção das cores",
-        texto: "Entenda como os cones presentes na retina participam da percepção das cores.",
+        texto: "A cor é percebida através dos cones na nossa visão. Existem cerca de seis milões de cones e a ausência ou deficiência dos cones causa daltonismo.",
         imagem: "imagens/images(2).jpeg",
         pagina: "cores.html"
     },
 
     {
         titulo: "O cérebro e a visão",
-        texto: "Saiba como o cérebro interpreta as informações recebidas pelos olhos.",
+        texto: "Nossos olhos funcionam como câmeras altamente sofisticadas, capitando luz, cores e formas, enquanto o cérebro interpreta tudo isso em frações de segundos.",
         imagem: "imagens/images(3).jpeg",
         pagina: "visao.html"
     },
@@ -112,14 +112,14 @@ const curiosidades = [
 
     {
         titulo: "A retina",
-        texto: "A retina possui células especiais responsáveis por detectar a luz.",
+        texto: "A retina é uma ponte fundamental entre a luz que entra em nossos olhos e as imagens que você vê.",
         imagem: "imagens/images(5).jpeg",
         pagina: "anatomia.html"
     },
 
     {
         titulo: "Problemas de visão",
-        texto: "Conheça alguns problemas que podem afetar a qualidade da visão.",
+        texto: "Defeitos na visão humana decorrem de anomalis no olho, que podem resultar em dificuldades para enxergar.",
         imagem: "imagens/images(6).jpeg",
         pagina: "doencas.html"
     }
