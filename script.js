@@ -85,7 +85,7 @@ const curiosidades = [
     {
         titulo: "Como enxergamos?",
         texto: "A visão é o sentido mais importante de todos e acaba exigindo um terço da nossa atividade cerebral.",
-        imagem: "imagens/imagen_como_enxergamos.png.jpeg",
+        imagem: "imagens/imagen_como_enxergamos.jpeg",
         pagina: "visao.html"
     },
 
