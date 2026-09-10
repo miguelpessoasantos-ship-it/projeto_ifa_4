@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | VISSION</title>
+
+    <link rel="stylesheet" href="quizz.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <a href="index.html" class="logo">
+            👁️ VISSION
+        </a>
+
+        <a href="index.html" class="voltar">
+            ← Voltar ao site
+        </a>
+
+    </header>
+
+
+    <!-- QUIZ -->
+
+    <main class="quiz">
+
+        <!-- TELA INICIAL -->
+
+        <section id="inicioQuiz" class="tela">
+
+            <div class="icone">
+                👁️
+            </div>
+
+            <h1>Quiz da Visão</h1>
+
+            <p>
+                Teste seus conhecimentos sobre a visão humana,
+                a anatomia dos olhos, as cores e os cuidados
+                com a saúde visual.
+            </p>
+
+            <button id="btnComecar" class="botao">
+                Começar Quiz
+            </button>
+
+        </section>
+
+
+        <!-- ÁREA DAS PERGUNTAS -->
+
+        <section id="areaQuiz" class="tela escondido">
+
+            <div class="informacoes">
+
+                <span id="numeroPergunta">
+                    Pergunta 1 de 10
+                </span>
+
+                <span id="pontuacao">
+                    Pontos: 0
+                </span>
+
+            </div>
+
+
+            <!-- BARRA DE PROGRESSO -->
+
+            <div class="barra">
+                <div id="progresso"></div>
+            </div>
+
+
+            <!-- PERGUNTA -->
+
+            <h2 id="pergunta">
+                Pergunta
+            </h2>
+
+
+            <!-- ALTERNATIVAS -->
+
+            <div id="alternativas" class="alternativas">
+
+                <button class="alternativa">
+                    Alternativa 1
+                </button>
+
+                <button class="alternativa">
+                    Alternativa 2
+                </button>
+
+                <button class="alternativa">
+                    Alternativa 3
+                </button>
+
+                <button class="alternativa">
+                    Alternativa 4
+                </button>
+
+            </div>
+
+
+            <!-- BOTÃO PRÓXIMA -->
+
+            <button id="btnProxima" class="botao" disabled>
+                Próxima pergunta →
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADO -->
+
+        <section id="resultado" class="tela escondido">
+
+            <div class="icone">
+                🏆
+            </div>
+
+            <h1>Quiz concluído!</h1>
+
+            <p>
+                Você terminou o Quiz da Visão.
+            </p>
+
+            <div class="resultado">
+
+                <span>Você acertou:</span>
+
+                <strong id="pontuacaoFinal">
+                    0 / 10
+                </strong>
+
+            </div>
+
+            <p id="mensagemResultado">
+                Muito bem!
+            </p>
+
+            <button id="btnReiniciar" class="botao">
+                🔄 Jogar novamente
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            © 2026 VISSION — Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <script src="quizz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,502 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f8f2;
+    color: #202420;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    width: 100%;
+    padding: 18px 7%;
+
+    background: #0b5d1e;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.voltar {
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background: white;
+    color: #0b5d1e;
+}
+
+
+/* ========================================
+   ÁREA DO QUIZ
+======================================== */
+
+.quiz {
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 20px;
+
+    flex: 1;
+}
+
+
+/* ========================================
+   TELAS
+======================================== */
+
+.tela {
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.1);
+
+    animation: aparecer 0.5s ease;
+}
+
+.escondido {
+    display: none;
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.icone {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+}
+
+.tela h1 {
+    color: #0b5d1e;
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.tela > p {
+    color: #667066;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botao {
+    border: none;
+
+    background: #0b5d1e;
+    color: white;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #168d39;
+
+    transform: translateY(-3px);
+}
+
+.botao:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ========================================
+   INFORMAÇÕES DA PERGUNTA
+======================================== */
+
+.informacoes {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+    color: #0b5d1e;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   BARRA DE PROGRESSO
+======================================== */
+
+.barra {
+    width: 100%;
+
+    height: 10px;
+
+    background: #dcebdd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 35px;
+}
+
+#progresso {
+    height: 100%;
+
+    width: 0%;
+
+    background: #168d39;
+
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+
+/* ========================================
+   PERGUNTA
+======================================== */
+
+#pergunta {
+    color: #202420;
+
+    font-size: 27px;
+
+    line-height: 1.4;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   ALTERNATIVAS
+======================================== */
+
+.alternativas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.alternativa {
+    padding: 18px;
+
+    border: 2px solid #dcebdd;
+
+    background: white;
+
+    color: #202420;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.alternativa:hover:not(:disabled) {
+    border-color: #168d39;
+
+    background: #f1f8f2;
+
+    transform: translateY(-2px);
+}
+
+.alternativa:disabled {
+    cursor: default;
+}
+
+
+/* RESPOSTA CERTA */
+
+.alternativa.correta {
+    background: #c8f5d0;
+
+    border-color: #168d39;
+
+    color: #075b1b;
+
+    font-weight: bold;
+}
+
+
+/* RESPOSTA ERRADA */
+
+.alternativa.errada {
+    background: #ffd6d6;
+
+    border-color: #d33;
+
+    color: #a00000;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RESULTADO
+======================================== */
+
+.resultado {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: #f1f8f2;
+
+    border-radius: 20px;
+
+    max-width: 300px;
+}
+
+.resultado span {
+    color: #667066;
+
+    font-size: 17px;
+}
+
+.resultado strong {
+    color: #0b5d1e;
+
+    font-size: 40px;
+}
+
+#mensagemResultado {
+    font-size: 19px;
+
+    color: #0b5d1e;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background: #0b5d1e;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: auto;
+}
+
+
+/* ========================================
+   MODO ESCURO
+======================================== */
+
+body.dark {
+    background: #101410;
+
+    color: white;
+}
+
+body.dark .tela {
+    background: #1c211d;
+}
+
+body.dark .tela h1 {
+    color: #bff5bf;
+}
+
+body.dark .tela > p {
+    color: #c8d0c8;
+}
+
+body.dark #pergunta {
+    color: white;
+}
+
+body.dark .alternativa {
+    background: #252b26;
+
+    color: white;
+
+    border-color: #3d493f;
+}
+
+body.dark .alternativa:hover:not(:disabled) {
+    background: #303a31;
+}
+
+body.dark .informacoes {
+    color: #bff5bf;
+}
+
+body.dark .resultado {
+    background: #252b26;
+}
+
+body.dark .resultado span {
+    color: #c8d0c8;
+}
+
+body.dark .resultado strong {
+    color: #bff5bf;
+}
+
+body.dark #mensagemResultado {
+    color: #bff5bf;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 650px) {
+
+    .cabecalho {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .voltar {
+        font-size: 14px;
+
+        padding: 8px 12px;
+    }
+
+    .quiz {
+        padding: 30px 15px;
+    }
+
+    .tela {
+        padding: 30px 20px;
+    }
+
+    .tela h1 {
+        font-size: 30px;
+    }
+
+    #pergunta {
+        font-size: 22px;
+    }
+
+    .alternativas {
+        grid-template-columns: 1fr;
+    }
+
+    .informacoes {
+        font-size: 14px;
+    }
+
+}
