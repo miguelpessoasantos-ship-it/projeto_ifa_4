@@ -312,10 +312,75 @@
             line-height: 1.5;
         }
 
-        .listaDestaque i {
-            color: var(--verde-neon);
-            margin-top: 4px;
-        }
+        /* =========================================
+   CHECKLIST COM EFEITO GLASSMORPHISM
+========================================= */
+
+.listaDestaque {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.listaDestaque li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 17px 19px;
+    margin: 0;
+
+    /* Efeito de vidro */
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Borda do vidro */
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    border-radius: 16px;
+
+    /* Sombra suave */
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+    line-height: 1.5;
+
+    transition: all 0.3s ease;
+}
+
+/* Efeito quando passar o mouse */
+.listaDestaque li:hover {
+    background: rgba(255, 255, 255, 0.20);
+
+    border-color: rgba(255, 255, 255, 0.45);
+
+    transform: translateX(6px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12),
+        inset 0 1px 2px rgba(255, 255, 255, 0.20);
+}
+
+/* Ícone de check */
+.listaDestaque i {
+    color: var(--verde-neon);
+
+    font-size: 18px;
+
+    margin-top: 3px;
+
+    flex-shrink: 0;
+
+    /* Pequeno brilho */
+    text-shadow: 0 0 8px rgba(191, 245, 191, 0.5);
+}
 
         /* Bloco editável */
         .blocoEditavel {
@@ -727,72 +792,97 @@
                  ÁREA PARA ADICIONAR INFORMAÇÕES
             ========================================== -->
 
-            <section class="destaqueVisao">
+         <!-- =========================================
+     ÁREA PARA ADICIONAR INFORMAÇÕES
+========================================= -->
+
+<section class="destaqueVisao">
+
+    <div>
+
+        <h2>
+            Por que a perda de visão ainda atinge tantas pessoas?
+        </h2>
+
+        <p>
+            Falta de acesso a cuidados básicos: Muitas pessoas enfrentam
+            dificuldades de infraestrutura, grandes distâncias até centros
+            médicos e custos elevados, o que adia a consulta ao perceberem
+            os primeiros sinais de alteração visual.
+        </p>
+
+    </div>
 
 
+    <ul class="listaDestaque">
 
-                
-                  <section class="destaquePorQueAPerdaDeVisaoAindaAtingeTantasPessoas?"
-                  
-                    <div>
+        <li>
+            <i class="fa-solid fa-check"></i>
 
-                      <h2>
-                      Por que a perda de visão ainda atinge tantas pessoas?
-                      </h2>
+            <span>
+                Diagnóstico tardio: Doenças graves como o glaucoma são
+                assintomáticas nas fases iniciais.
+            </span>
+        </li>
 
 
-                      <p>
-                       Falta de acesso a cuidados básicos: Muitas pessoas enfrentam dificuldades de infraestrutura,
-                       grandes distâncias até centros médicos e custos elevados, o que adia a consulta ao perceberem os primeiros sinais de alteração visual.
-                      </p>
+        <li>
+            <i class="fa-solid fa-check"></i>
 
-                   
-                    </div>
+            <span>
+                Quando os sintomas surgem, a doença já está em estágio
+                avançado, comprometendo a visão de forma irreversível.
+            </span>
+        </li>
 
-                   <ul class="listaDestaque">
 
-                <li>
-                     <i class="fa-solid fa-check"></i>
-                     <span> Diagnóstico tardio: Doenças graves como o glaucoma são assintomáticas nas fases iniciais. </span>
-                </li>
-                
-                <li> 
-                     <i class="fa-solid fa-check"></i>
-                     <span> Quando os sintomas surgem, a doença já está em estágio avançado, comprometendo a visão de forma irreversível. </span>  
-                </li>
-                   
-                <li>
-                     <i class="fa-solid fa-check"></i>
-                     <span>  Falta de conscientização: A população muitas vezes desconhece a importância de realizar um check-up oftalmológico
-                   anual e de controlar os fatores de risco. </span>
-                </li>
-                 
-                <li>
-                     <i class="fa-solid fa-check"></i>
-                     <span>  Escassez de recursos públicos: Diversos sistemas de saúde sofrem com a falta de equipamentos modernos
-                   e profissionais especializados para atender à demanda. </span>
-                </li>
-                 
-                <li>
-                     <i class="fa-solid fa-check"></i>
-                     <span> Doenças sistêmicas e evitáveis: Causas frequentes de cegueira, como a catarata e complicações da diabetes e hipertensão,
-                   podem ser controladas com hábitos saudáveis e consultas regulares. </span>
-                </li>
-                  
-                <li>
-                     <i class="fa-solid fa-check"></i>
-                     <span>  Desde bebês até idosos, milhares de pessoas perdem a capacidade de enxergar por condições
-                   que poderiam ser detectadas rapidamente em uma consulta de rotina. </span>
-                </li>
-                 
-                  
+        <li>
+            <i class="fa-solid fa-check"></i>
 
-                   </ul>
+            <span>
+                Falta de conscientização: A população muitas vezes desconhece
+                a importância de realizar um check-up oftalmológico anual e de
+                controlar os fatores de risco.
+            </span>
+        </li>
 
-              
 
-            </section>
+        <li>
+            <i class="fa-solid fa-check"></i>
 
+            <span>
+                Escassez de recursos públicos: Diversos sistemas de saúde
+                sofrem com a falta de equipamentos modernos e profissionais
+                especializados para atender à demanda.
+            </span>
+        </li>
+
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Doenças sistêmicas e evitáveis: Causas frequentes de cegueira,
+                como a catarata e complicações da diabetes e hipertensão,
+                podem ser controladas com hábitos saudáveis e consultas
+                regulares.
+            </span>
+        </li>
+
+
+        <li>
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Desde bebês até idosos, milhares de pessoas perdem a capacidade
+                de enxergar por condições que poderiam ser detectadas
+                rapidamente em uma consulta de rotina.
+            </span>
+        </li>
+
+    </ul>
+
+</section>
 
             <!-- =========================================
                  BOTÃO VOLTAR
