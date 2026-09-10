@@ -412,7 +412,7 @@ function mostrarResultado() {
     else {
 
         mensagemResultado.textContent =
-            "📚 Continue aprendendo! Explore o VISSION e tente novamente.";
+            "📚 Continue aprendendo! Explore o VISIOON e tente novamente.";
 
     }
 
