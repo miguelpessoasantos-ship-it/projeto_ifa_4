@@ -298,20 +298,23 @@
             opacity: .9;
         }
 
-        .listaDestaque {
-            list-style: none;
-            padding: 0;
-        }
+        .textoPerdaVisao {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .listaDestaque li {
-            display: flex;
-            gap: 12px;
+.textoPerdaVisao h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
 
-            margin-bottom: 16px;
-
-            line-height: 1.5;
-        }
-
+.textoPerdaVisao p {
+    font-size: 18px;
+    line-height: 1.9;
+}
         /* =========================================
    CHECKLIST COM EFEITO GLASSMORPHISM
 ========================================= */
@@ -796,22 +799,20 @@
      ÁREA PARA ADICIONAR INFORMAÇÕES
 ========================================= -->
 
-<section class="destaqueVisao">
+<div class="textoPerdaVisao">
 
-    <div>
+    <h2>
+        E por que a perda de visão ainda atinge tantas pessoas?
+    </h2>
 
-        <h2>
-           E por que a perda de visão ainda atinge tantas pessoas?
-        </h2>
+    <p>
+        Falta de acesso a cuidados básicos: Muitas pessoas enfrentam
+        dificuldades de infraestrutura, grandes distâncias até centros
+        médicos e custos elevados, o que adia a consulta ao perceberem
+        os primeiros sinais de alteração visual.
+    </p>
 
-        <p>
-            Falta de acesso a cuidados básicos: Muitas pessoas enfrentam
-            dificuldades de infraestrutura, grandes distâncias até centros
-            médicos e custos elevados, o que adia a consulta ao perceberem
-            os primeiros sinais de alteração visual.
-        </p>
-
-    </div>
+</div>
 
 
     <ul class="listaDestaque">
